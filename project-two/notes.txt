@@ -1,0 +1,8 @@
+Introduction:
+    This project demonstrates the corrdinate functionality for mouse hover. This project can be skipped if needed.
+
+Things Learned:
+    - if we have an event and use event.clientX and event.clientY, we get the coordinates of the specific part
+    - if we need to pass argument to the function when emmiting an event we can simply pass it on the function.
+    - if we still need the event object such that we are woring on it, we can pass $event as an argument
+    - Example:  <button v-on:click="dummyFunction(arg1, $event)"></button>

@@ -7,6 +7,7 @@ new Vue({
     methods:{
         changeName:function(){
             this.name=this.inpName
+            this.inpName=""
         },
         setName:function(event){
             this.inpName=event.target.value

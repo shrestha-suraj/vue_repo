@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Local Vue Project</title>
-    <script src="./js/vue.js"></script>
+    <script src="../vue.js"></script>
     <link rel="stylesheet" href="./css/index.css"/>
 </head>
 <body>
     <div class="root">
+        <h1>{{title}}</h1>
         <h1>{{name}}</h1>
         <br/><br/>
-        <input placeholder="Enter a name" v-on:input="setName"
+        <input placeholder="Enter a name" v-on:input="setName" v-bind:value="inpName"
         />
         <br/>
         <button v-on:click="changeName">

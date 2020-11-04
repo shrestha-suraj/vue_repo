@@ -1,0 +1,6 @@
+Introduction:
+    This project demonstrates the barebon structure of Vue library by downloading Vue.js file from CDN and then using it with the project.
+
+Things Learned:
+    - A specific part of a html file can be conveted into Vue component with other components remaining as html
+    - Syntax: new Vue({el:'element to control by vue',data:{'data that is accessed by the component'},methods:{'methods accessed to the component'}})
