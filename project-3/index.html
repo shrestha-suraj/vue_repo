@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body style="display: flex;width: 100%;height: 100vh;justify-content: center;align-items: center;flex-direction: column;">
+    <div id="root">
+        <h3>When we update any data in the vue data object, this whole componenet gets re-renderd. If we are running an expensive funtion<br/> 
+            during this time and this function doesnot depend on the data that is being manipuated, the cost could be expensive for an <br/>
+            enterprise level application. Hence we want to preserve an information about a variable in data object if it is not depenende.<br/>
+            Example:<br/>
+                This value depends on a data object called num1. It changes by 1 per button click: {{getNum1}}<br/>
+                <button v-on:click="num1++">Increase Num1</button>&nbsp;<button v-on:click="num1--">Decrease Num1</button><br/>
+                This value depends on a data object called num2. It increase by 1 per button click: {{getNum2()}}<br/>
+                <button v-on:click="num2++">Increase Num2</button>
+                <br/>
+                Look at the console. The buttons trigger a function that chage num1 and num2 but if we trigger num2 it doesnot rerender num1 function<br/>
+                for num 1 as well. To prevent we put the function for num1 in <strong style="color:red">computed</strong> object of Vue.<br/>
+                Check the js file for the effect
+
+        </h3>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -3,7 +3,8 @@ new Vue({
     data:{
         x:0,
         y:0,
-        counter:0
+        counter:0,
+        name:""
     },
     methods:{
         changeCoordinates:function(event){

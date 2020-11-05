@@ -8,11 +8,16 @@
   </head>
   <body style="width: 100%;height: 100vh; display:flex;justify-content: center;align-items: center;flex-direction: column;">
     <div id="root">
+      <span style="color:red">Test string with v-bind:attribute</span>
       <h1>{{counter}}</h1>
       <br/>
       <button v-on:click="increaseCounter(2,$event)">Increase</button>
       <br/>
       <h4 v-on:mousemove="changeCoordinates">Your mouse coordinates are {{x}} / {{y}}</h4>
+      <input placeholder="Example of v-model" v-model="name"/>&nbsp;&nbsp;<span>{{name}}</span>
+      <br/>
+      <br/>
+      <button v-on:click="name=''">This button changes the value of name in js to " ". See what happens to input value</button>
     </div>
     <script src="./index.js"></script>
   </body>

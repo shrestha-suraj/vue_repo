@@ -16,3 +16,8 @@ Here we can find the list of all the directives for Vue.js with examples
   [ Vue lets us wrap html event listeners to vue so that we can call methods present in the vue object ]
   ( Example: <button v-on:click="doSomethingFunction"> Click Me</button> )
   
+5) v-model="data object value"
+  [ This is a powerful and easy way for two way data binding for input tags. Change in input changes value in data object and vice versa]
+  ( Example: <input v-model="name"/>)  -> In js file we have data:{name:"Suraj"}
+  -> Change the input value in html changes the js value and change in js value in js changes html value (Two way data binding)
+  

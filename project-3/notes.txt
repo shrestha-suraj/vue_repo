@@ -1,0 +1,6 @@
+Introduction:
+    This project demonstrates the memory saving functionality of Vue.js
+Things Learned:
+    - if we put functions in computed object of Vue instead of methods and we want the data preservation
+      rather than re-rendering when any data value is changed, we use (computed) object. This is similar 
+      to memoziation in React 
