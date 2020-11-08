@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css"/>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <ul>
+            <li v-for="(ingredient,i)  in ingredients">{{ ingredient }} ({{ i }})</li>
+          </ul>
+          <template v-for="person in persons">
+              <template v-for="(value,key,index) in person">
+                <h1>
+                  {{key}}: {{value}}
+                </h1>        
+              </template>
+          </template>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

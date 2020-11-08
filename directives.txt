@@ -22,4 +22,22 @@ Here we can find the list of all the directives for Vue.js with examples
   [ This is a powerful and easy way for two way data binding for input tags. Change in input changes value in data object and vice versa]
   ( Example: <input v-model="name"/>)  -> In js file we have data:{name:"Suraj"}
   -> Change the input value in html changes the js value and change in js value in js changes html value (Two way data binding)
-  
+
+6) v-if="condition(true or false)"   |  v-else
+  [ This is a directive that allows vue to attach or detach element to the dom depending on the provided condition]
+  ( Example: <p v-if="show">You can see me</p>
+             <p v-else>You can see me if the other guy is false</p> 
+             -> In js file we have data:{show:true})
+
+6) v-show="condition(true or false)"
+  [ This is a directive that allows vue to hide element to the dom depending on the provided condition. The element is present in dom, just not visibel]
+  ( Example: <p v-if="show">You can see me</p>
+             <p v-else>You can see me if the other guy is false</p> 
+             -> In js file we have data:{show:true})
+
+7) v-for="element in elements"
+  [ This is a way to loop through an array data provided in js and get individual elemnt that has this data]
+  ( Example:  <ul> <li v-for="(person,index) in persons">{{index+1}} -> {{person.name}}</li></ul>)
+  -> The the v-for is kept on li cause li is the element that has to be repeated for each item in persons
+
+  (Another Example:  <h1 v-for="n in 10">{{n}}</h1>)   This allows vue to print from 1 to 10, n can be any variable name

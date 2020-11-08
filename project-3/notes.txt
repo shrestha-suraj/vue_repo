@@ -6,6 +6,9 @@ Things Learned:
       to memoziation in React 
     
     - other technique is to use watch object whose key is the same key on the data object and whose value
-      is the value is a function that is triggered when the value of key changes in the data making isolated 
+      is a function that is triggered when the value of key changes in the data making isolated 
       re-renders on the page
+
+    - computed property cannot run asynchronous task which is a drawback in its case.
+    - this issue is solved somewhat by watch
       
