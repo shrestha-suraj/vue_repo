@@ -4,3 +4,8 @@ Things Learned:
     - if we put functions in computed object of Vue instead of methods and we want the data preservation
       rather than re-rendering when any data value is changed, we use (computed) object. This is similar 
       to memoziation in React 
+    
+    - other technique is to use watch object whose key is the same key on the data object and whose value
+      is the value is a function that is triggered when the value of key changes in the data making isolated 
+      re-renders on the page
+      

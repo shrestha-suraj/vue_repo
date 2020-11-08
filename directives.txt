@@ -1,8 +1,9 @@
 Here we can find the list of all the directives for Vue.js with examples
 
-1) v-bind:attribute="data:value"
+1) v-bind:attribute="data:value"   |  can also be writtend as    :attribute="data:value"  (this is a shortcut)
   [ Binds the value from the data object of the js file to the attribute of the html file ]
-  ( Example:  <input type="text" v-bind:value="age"/>)
+  ( Example:  <input type="text" v-bind:value="age"/>) OR
+  ( Example:  <input type="text" :value="age"/>)
 
 2) v-once
   [ Creates a sitiation where the element using this directive is not affected by value change ]
@@ -12,9 +13,10 @@ Here we can find the list of all the directives for Vue.js with examples
   [ If data is storing a value that is actually an html tag Vue escapes it unless we use this directive ]
   ( Example: <p v-html="myLink"></p> ) -> In js file we have data:{myLink:"<a href="/google">Google</a>"}
 
-4) v-on:htmlEventListeners="method_to_run"
+4) v-on:htmlEventListeners="method_to_run"  |   can also be written as    @htmlEventListener
   [ Vue lets us wrap html event listeners to vue so that we can call methods present in the vue object ]
-  ( Example: <button v-on:click="doSomethingFunction"> Click Me</button> )
+  ( Example: <button v-on:click="doSomethingFunction"> Click Me</button> ) OR
+  ( Example: <button @click="doSomethingFunction"> Click Me</button> )
   
 5) v-model="data object value"
   [ This is a powerful and easy way for two way data binding for input tags. Change in input changes value in data object and vice versa]
