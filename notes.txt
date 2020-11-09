@@ -2,7 +2,7 @@
    You can simply create the Vue instance without el property and then later user the $mount method
    Example: const vm1=new Vue({....})   later we can write   vm1.$mount("#app1")  -> This is mounting
 
-
+-------------------------------------------------------------------------------------------------------------------
 2) Mounting a Vue instance with a template
     Code Sample: (HTML)
         <div id="app1"></div>
@@ -18,7 +18,7 @@
             <h1>Hello World</h1>
         </div>
 
-
+-------------------------------------------------------------------------------------------------------------------
 3)  Reusable component
     Code Sample: (JS)
         Vue.component('hello',{
@@ -34,3 +34,125 @@
             <h1>Suraj Shrestha</h1>
             <h1>Suraj Shrestha</h1>
         </div>
+-------------------------------------------------------------------------------------------------------------------
+4) <slot></slot> is same as props.children in React
+	-> This allows to pass html contest from inside a component without passing it as pros in elements attributes
+	-> This also means that styled can only be applied to the child component that is rendering the elements, not the one that is passing
+	-> Example:
+		
+		<app-dummy-element>
+			<h1>Hello World</h1>
+			<p>How are you today</p>
+		</app-dummy-element>
+		
+		In component that is app-dummy-element
+		<div>
+			<slot></slot>    -> The html that is above is replaced in slot tag. This is a predefined tag by VueJs. Also styles only apply
+					    from this file not the file above.
+		</div>       		 -> But if the above h1 tag depends on any data then the data can be used from the same file rather than depending on child file
+
+	-> We also have option for introducing slot on multiple places using name attribute with slot and providing slot attribute to the appropriate tag
+	-> Example:
+		
+		<app-dummy-element>
+			<h1 slot="testSlot1">Hello World</h1>         //Defining slot attribute in the html tags
+ 			<p slot="testSlot2">How are you today</p>
+		</app-dummy-element>
+		
+		In component that is app-dummy-element
+		<div>
+			<div>
+				<slot name="testSlot1"></slot>     -> The h1 tag element will sit here
+			</div>
+			<div>
+				<slot name="testSlot2"></slot>     -> The p tag element will sit here
+			</div>
+
+		</div>
+
+
+	-> Difficult conditions
+		1) Defining slot with name="XYZ" but not assigning any tag with attribute slot="XYZ" on parent component.
+			-> This will give error unless we provide data in slot tag in child component i.e. <slot name="XYZ">This is a test</slot>
+			   Note: This will make sure to render the content of itself and if there is a tag in parent that has attribute slot="XYZ", the given content is replaced
+				 This is to promote default nature in slot.
+
+		2) Writing a <slot></slot> after <slot name="ABC"></slot>
+			-> If we have a a slot without a name this means all the elements on parent that does not have a slot attribute will be injected on this slot tag.
+
+-------------------------------------------------------------------------------------------------------------------
+5) <component></component> is a way to dynamically bind a component upon given conditions
+	<keep-alive></keep-alive>
+	Example:
+		Lets say I have three components A,B and C. These all three components are being rendered on App component
+
+		<template>
+			<div>
+				<button @click="selectedComponent='compA'"></button>
+				<button @click="selectedComponent='compB'"></button>
+				<button @click="selectedComponent='compC'"></button>
+				<component :is="selectedComponent"></component>    // Here the component rendered is conditional
+				/* Note: The component is always destroyed and created when different components are rendered
+				   This comes with effect of data resetting whenever the component is taken away from the screen.
+				   To prevent this from happening we can wrap component arounda another vue element called:
+				   <keep-alive></keep-alive>
+				   Example:
+				   	<keep-alive>
+						<component :is="selectedComponent"></component>
+					</keep-alive>
+
+					This preserves the state of the component that is not on the screen but also takes away the
+					ability of to use the destroyed lifecycle hook. For this we have access to other hooks called:
+						activited = (when the component is seen) deactivated = (when the component is unseen) 
+				*/
+			</div>
+		</template>
+		<script>
+			import CompA from './A'
+			import CompA from './A'
+			import CompA from './A'
+			export default{
+				data(){
+					return {
+						selectedComponent:'compA'   //Default
+					}
+				},
+				components:{
+					'compA':A,
+					'compB':B,
+					'compC':C
+				}
+			}
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

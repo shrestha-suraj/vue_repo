@@ -1,0 +1,13 @@
+npm install -g vue-cli
+
+Choose from different Templates
+-------------------------------
+simple  ->  index.html+ Vue CDN import   
+webpack-simple  ->  basic webpack workflow
+webpack ->  complex webpack workflow (including testing)
+browserify / browserify-simple  ->  Browserify Workflows
+
+Commands:
+---------
+vue init template_config project_name
+Example:  vue init webpack-simple test-project

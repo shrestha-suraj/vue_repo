@@ -7,3 +7,5 @@ All lifecycles methods for Vue instance
 5) update()
 6) beforeDestroy()
 7) destroyed()
+8) activated()
+9) deactivated()
