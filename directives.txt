@@ -41,3 +41,8 @@ Here we can find the list of all the directives for Vue.js with examples
   -> The the v-for is kept on li cause li is the element that has to be repeated for each item in persons
 
   (Another Example:  <h1 v-for="n in 10">{{n}}</h1>)   This allows vue to print from 1 to 10, n can be any variable name
+
+8) ref="anyName"
+  [ This helps vue js to reference to a DOM element and make changes to it. Simiar to querySelector in vanilla js]
+  ( Example: <button @click="testMe" ref="myButton">Hello World</button>)
+  -> I can access this button in Vue instance by typing {{{ this.$refs.myButton }}}

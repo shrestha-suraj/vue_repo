@@ -1,0 +1,36 @@
+1) Say you have the business logic in Vue but are not sure which element to mount it on
+   You can simply create the Vue instance without el property and then later user the $mount method
+   Example: const vm1=new Vue({....})   later we can write   vm1.$mount("#app1")  -> This is mounting
+
+
+2) Mounting a Vue instance with a template
+    Code Sample: (HTML)
+        <div id="app1"></div>
+    
+    Code Sample: (JS)
+        const v1=new Vue({
+            template:'<h1>Hello World</h1>'
+        })
+        v1.$mount("#app1")
+
+    Result HTML
+        <div id="app1">
+            <h1>Hello World</h1>
+        </div>
+
+
+3)  Reusable component
+    Code Sample: (JS)
+        Vue.component('hello',{
+            template:'<h1>Suraj Shrestha</h1>'
+        })
+    Code Sample: (HTML)
+        <div>
+            <hello></hello>
+            <hello></hello>
+        </div>
+    Result HTML
+        <div>
+            <h1>Suraj Shrestha</h1>
+            <h1>Suraj Shrestha</h1>
+        </div>
