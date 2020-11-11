@@ -28,6 +28,7 @@ Form handeling in vue is simple
     Note: Vue.js automatically knows it is a select. I don't have any idea how it does it. It is just awesome
 
 
+-> these words that comes after directive are called (MODIFIERS)
 -> v-modal.lazy (Makes v-modal bind the data when focus is changed but not with every key stroke)
 -> v-modal.trim (Trims the spaces on the data entered on the input)
 -> v-modal.number (Even when text input is type number, it stores the date in string, this method converts it into number)
