@@ -1,0 +1,41 @@
+Form handeling in vue is simple
+
+1) v-model [v-modal.lazy.trim.number]
+-> This directive is used for two way data binding the native input element with a data value in js
+-> You can directly insert v-modal in any input tag and it will do things for you:
+    provide :value="js-variable"  and @input="js-variable=$event.target.value"
+
+-> In order to create a CUSTOM INPUT element and take the advantage of v-modal we have to create a new component
+    Example:   new component is called appSwitch
+
+    In parent file where we import the component:  <app-switch v-modal='test'></app-switch> where test is a variabe in js
+    Since we know that v-modal offers two atrributes to the tag we can go to the component and create props called ['value']
+    This is provided by the v-modal. Then we can make changes based on our value and when we change anything we can trigger an
+    event "input"  that will set the new value. There you go, you have your custom input element that can use v-modal
+
+-> Types of input and how to handle them:
+1) Regular Text/Email/Password Input:  <input v-modal="variable"/>
+
+2) Number Input: <input v-modal.number="variable"/>  -> forcefully converts the input from string to number
+
+3) CheckBox: <input v-modal="test" value="v1"/> <input v-modal="test" value="v2"/>  where test is an array in js
+    Note: Vue.js automatically knows it is a checkbox beacuse of same modal being used and that the variable is an array
+
+4) RadioButton:<input v-modal="test" value="v1"/> <input v-modal="test" value="v2"/>  where test is a variable in js
+    Note: Vue.js automatically knows it is a radiobutton beacuse of same modal being used and that the variable is an element
+
+5) Select: <select v-modal="variable">  (<option></option>) x N </select>  where variable is a variable in js
+    Note: Vue.js automatically knows it is a select. I don't have any idea how it does it. It is just awesome
+
+
+-> v-modal.lazy (Makes v-modal bind the data when focus is changed but not with every key stroke)
+-> v-modal.trim (Trims the spaces on the data entered on the input)
+-> v-modal.number (Even when text input is type number, it stores the date in string, this method converts it into number)
+
+
+Important note on @click event
+-> When the button for the form is clicked the form is automatically submitteed
+-> To prevent this we can use @click.prevent="" to let vue handle the form submission
+-> Also we are in a custom component say <app-switch></app-switch> that needs to listen for click events
+   We can achieve this by using @click.native to let vue know that we are refering click to the parent element that is defined
+   on the AppSwitch.vue component i.e. the html tag that is below <template> tag

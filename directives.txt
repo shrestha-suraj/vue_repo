@@ -18,10 +18,14 @@ Here we can find the list of all the directives for Vue.js with examples
   ( Example: <button v-on:click="doSomethingFunction"> Click Me</button> ) OR
   ( Example: <button @click="doSomethingFunction"> Click Me</button> )
   
-5) v-model="data object value"
+5) v-model="data object value"   
   [ This is a powerful and easy way for two way data binding for input tags. Change in input changes value in data object and vice versa]
   ( Example: <input v-model="name"/>)  -> In js file we have data:{name:"Suraj"}
   -> Change the input value in html changes the js value and change in js value in js changes html value (Two way data binding)
+  -> Note: You can append additional functionalities to this v-model with "." such that you can access additional functionalities of data binging.
+     Example:  v-model.lazy (Updates the variable in js when focus is off from the input element. Not update the variable at each key stroke)
+               v-model.trim (Trims the text to remove spaces)
+               v-model.number (Forces to convert the input text into number and store it in variable)   WE CAN COMBINE THEM TOGETHER AS NEEDED
 
 6) v-if="condition(true or false)"   |  v-else
   [ This is a directive that allows vue to attach or detach element to the dom depending on the provided condition]
